@@ -89,7 +89,8 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
         toast({
           title: 'Imagem não adicionada',
           description: 'É preciso adicionar e aguardar o upload de uma imagem antes de realizar o cadastro.',
-          status: 'info'
+          status: 'info',
+          isClosable: true,
         });
 
         return;
@@ -105,12 +106,14 @@ export function FormAddImage({ closeModal }: FormAddImageProps): JSX.Element {
         title: 'Imagem cadastrada',
         description: 'Sua imagem foi cadastrada com sucesso.',
         status: 'success',
+        isClosable: true
       })
     } catch {
       toast({
         title: 'Falha no cadastro',
         description: 'Ocorreu um erro ao tentar cadastrar a sua imagem.',
         status: 'error',
+        isClosable: true
       })
     } finally {
       closeModal();
